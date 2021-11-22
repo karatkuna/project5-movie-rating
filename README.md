@@ -5,4 +5,4 @@ MovieRating project sample page for coding exercise with INCO-6 bootcamp
 2. Unnati
 3. Dharani
 ## Language used
-`NodeJs, ExpressJs, Postgresql, jquery`
+`NodeJs, ExpressJs, Postgresql, jquery, Ajax`
