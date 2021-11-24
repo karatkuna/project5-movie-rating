@@ -1,5 +1,3 @@
-// const pathname = window.location.pathname.substr(1)
-// const display = '/discover/movie','/movie/popular','movie/top_rated','/upcoming']
 const display = {
   'popular': '/movie/popular',
   'topRated': '/movie/top_rated',

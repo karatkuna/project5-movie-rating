@@ -1,4 +1,4 @@
-DROP TABLE IF EXIST tblmoviesrating;
+DROP TABLE IF EXISTS tblmoviesrating;
 CREATE TABLE IF NOT EXISTS tblmoviesrating(
 id SERIAL PRIMARY KEY,
   rating NUMERIC(5,2) NOT NULL,
