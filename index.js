@@ -7,8 +7,12 @@ const session = require("express-session");
 //const db = require("./database");
 
 const morgan = require("morgan");
+
+//app define before router
+
 const axios = require("axios");
 const homeRouter = require("./routes/home");
+const searchRoute = require("./routes/search");
 const moviesRouter = require("./routes/movies");
 const moviesApiRouter = require("./routes/api/allMoviesApi");
 const singleMovieApiRouter = require("./routes/api/singleMovieApi");
@@ -44,5 +48,6 @@ app.use("/movies", moviesRouter);
 app.use("/api/all-movies", moviesApiRouter);
 app.use("/api/single-movie", singleMovieApiRouter);
 app.use("/", homeRouter);
+app.use("/search", searchRoute);
 
 app.listen(PORT, () => console.log(`Listening at http://localhost:${PORT}`));
