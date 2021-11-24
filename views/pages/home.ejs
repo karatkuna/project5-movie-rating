@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <h2>hello</h2>
-
-
-  <script src="/public/js/allmovies.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <%- include('../partials/scriptsAttach') %>
+  </head>
+  <body class="">
+    <header><%- include('../partials/header') %></header>
+    <!-- <h2>hello</h2> -->
+    <main>
+      <div>
+        <h3 class="pt-3 text-center">Welcome to Movies Listing</h3>
+        <div
+          class="d-flex flex-row justify-content-center flex-wrap"
+          id="movies"
+        ></div>
+      </div>
+    </main>
+    <%- include('../partials/footer') %>
+    <script src="/js/allmovies.js"></script>
+    <%- include('../partials/attachJsscript') %>
+  </body>
 </html>
-
-

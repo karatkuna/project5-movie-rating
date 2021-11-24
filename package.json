@@ -4,7 +4,9 @@
   "description": "MovieRating project sample page for coding exercise with INCO-6 bootcamp\r ## Team Members\r 1. Karat\r 2. Unnati\r 3. Dharani\r ## Language used\r `NodeJs, ExpressJs, Postgresql, jquery`",
   "main": "index.js",
   "scripts": {
-    "dev": " nodemon index.js",
+    "dev": "nodemon -e js,ejs,css index.js",
+    "create_db": "psql -U postgres -f sql/create_db.sql",
+    "create_tables": "psql -U postgres -d db_movies -f sql/create_tables.sql",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,9 +20,11 @@
   },
   "homepage": "https://github.com/dharanim04/Project5_MovieRating#readme",
   "dependencies": {
+    "axios": "^0.24.0",
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
+    "express-session": "^1.17.2",
     "morgan": "^1.10.0",
     "pg-promise": "^10.11.1"
   },
