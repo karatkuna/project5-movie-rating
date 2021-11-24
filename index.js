@@ -1,5 +1,11 @@
 require("dotenv").config();
 const express = require("express");
+
+const session = require("express-session");
+
+//const bcrypt = require("bcryptjs");
+//const db = require("./database");
+
 const morgan = require("morgan");
 const axios = require("axios");
 const homeRouter = require("./routes/home");
@@ -16,6 +22,20 @@ app.use(express.json());
 app.use(morgan("dev"));
 app.use(express.static("public"));
 app.set("view engine", "ejs");
+
+
+// session config
+// app.use(
+//   session({
+//     cookie: {
+//       maxAge: 24 * 60 * 60 * 1000,
+//     },
+//     name: "mrcoffee_sid",
+//     saveUninitialized: false,
+//     resave: false,
+//     secret: process.env.SESSION_SECRET,
+//   })
+// )
 
 // Cofigure axios to only request the movie db
 axios.defaults.baseURL = "https://api.themoviedb.org/3";

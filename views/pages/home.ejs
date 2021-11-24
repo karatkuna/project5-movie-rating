@@ -1,26 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <%- include('../partials/scriptsAttach') %>
-  </head>
-  <body class="">
-    <header><%- include('../partials/header') %></header>
-    <!-- <h2>hello</h2> -->
-    <main>
-      <div>
-        <h3 class="pt-3 text-center">Welcome to Movies Listing</h3>
-        <div
-          class="d-flex flex-row justify-content-center flex-wrap"
-          id="movies"
-        ></div>
+<%- include('../partials/head') %>
+<body class="w3-light-grey">
+  <%- include('../partials/nav') %>
+  <%- include('../partials/header') %>
+
+  <main>
+    <section class="banner" id="home">
+      <div class="banner-txt">
+        <h1 class="w3-text-white banner-h1">Rate what you’ve watched with a <br>thumb up or thumb down</h1>
+        <span class="btn-group">
+          <button class="btn btn-search" type="button">SEARCH MOVIE</button>
+          <button class="btn btn-login" type="button">LOG IN</button>
+        </span>
       </div>
-    </main>
-    <%- include('../partials/footer') %>
-    <script src="/js/allmovies.js"></script>
-    <%- include('../partials/attachJsscript') %>
-  </body>
+      <img class="w3-image" src="/assets/istockphoto-1180700862-612x612.jpg" alt="cinema" width="1000" height="1060">
+    </section>
+
+    <section class="container">
+      <!-- POPULAR Movies -->
+      <div class="row">
+        <div class="col-md-12 text-left">
+          <h1 class="carousel-title text-left">Popular Movies</h1>
+        </div>
+        
+        <div id="carouselExample" class="carousel slide d-none d-sm-none d-md-block" data-ride="carousel">
+          <div id="popular" class="carousel-inner">
+          </div>
+
+          <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+
+          <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+
+       <!-- TOP RATED Movies -->
+       <div class="row">
+        <div class="col-md-12 text-left">
+          <h1 class="carousel-title text-left">Top Rated Movies</h1>
+        </div>
+        
+        <div id="carouselExample1" class="carousel slide d-none d-sm-none d-md-block" data-ride="carousel">
+          <div id="topRated" class="carousel-inner">
+          </div>
+
+          <a class="carousel-control-prev" href="#carouselExample1" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+
+          <a class="carousel-control-next" href="#carouselExample1" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+
+       <!-- UPCOMING Movies -->
+       <div class="row">
+        <div class="col-md-12 text-left">
+          <h1 class="carousel-title text-left">Upcoming Movies</h1>
+        </div>
+        
+        <div id="carouselExample2" class="carousel slide d-none d-sm-none d-md-block" data-ride="carousel">
+          <div id="upcoming" class="carousel-inner">
+          </div>
+
+          <a class="carousel-control-prev" href="#carouselExample2" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+
+          <a class="carousel-control-next" href="#carouselExample2" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    
+  </main>
+  <%- include('../partials/footer') %>
+  
+
+
+  <!-- Bootstrap JQuery Plugin -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+  <!-- Additional Javascript -->
+  <!-- <script src="https://www.jqueryscript.net/demo/bootstrap-carousel-templates/logo-carousel/js/main.js"></script> -->
+  <script src="/js/allMovies.js"></script>
+</body>
 </html>

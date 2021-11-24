@@ -1,10 +1,12 @@
-const express = require("express");
-const router = express.Router();
+const express = require('express')
+const router = express.Router()
 
-router.get("/", (req, res) => {
-  res.render("pages/home", {
-    pageTitle: "Home Page",
-  });
-});
+router.get('/', (req, res) => {
+  res.render('pages/home', {
+    pageTitle: 'Home Page'
+  })
+})
 
-module.exports = router;
+
+module.exports = router
+
