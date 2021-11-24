@@ -2,8 +2,8 @@ require("dotenv").config();
 const express = require("express");
 const session = require("express-session");
 
-const bcrypt = require("bcryptjs");
-const db = require("./database");
+//const bcrypt = require("bcryptjs");
+//const db = require("./database");
 const morgan = require("morgan");
 //app define before router
 const app = express();
@@ -20,21 +20,21 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 
 // session config
-app.use(
-  session({
-    cookie: {
-      maxAge: 24 * 60 * 60 * 1000,
-    },
-    name: "mrcoffee_sid",
-    saveUninitialized: false,
-    resave: false,
-    secret: process.env.SESSION_SECRET,
-  })
-);
+// app.use(
+//   session({
+//     cookie: {
+//       maxAge: 24 * 60 * 60 * 1000,
+//     },
+//     name: "mrcoffee_sid",
+//     saveUninitialized: false,
+//     resave: false,
+//     secret: process.env.SESSION_SECRET,
+//   })
+// );
 
 // ROUTES
 
-app.use("/movies", moviesroute);
+//app.use("/movies", moviesroute);
 
 app.use("/", homeroute);
 
