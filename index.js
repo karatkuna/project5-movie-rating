@@ -7,8 +7,9 @@ const session = require("express-session");
 const morgan = require("morgan");
 //app define before router
 const app = express();
-const homeroute = require("./routes/home");
+const homeRoute = require("./routes/home");
 const moviesroute = require("./routes/movies");
+const searchRoute = require("./routes/search");
 
 const PORT = process.env.PORT || 3000;
 
@@ -36,7 +37,8 @@ app.use(express.static("public"));
 
 //app.use("/movies", moviesroute);
 
-app.use("/", homeroute);
+app.use("/", homeRoute);
+app.use("/search", searchRoute);
 
 app.listen(PORT, () => {
   console.log(`App is listening at http://localhost:${PORT}`);
