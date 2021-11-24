@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <section>
+    <% if (errors && errors.length > 0){ %>
+      <% for (let i = 0; i < errors.length; i++){ %>
+        <p class ="error-msg"><%= errors[i] %> </p>
+      <% } %>
+    <% } %>
+    <form method="POST" action="/login">
+     <p>Login To Rate a Movie</p>
+      <div><i></i><input type="text" id="email" name="email"></div>
+      <div><i></i><input type="password" id="password" name="password"></div>
+      <button  type="submit">Log in</button>
+      <p><a href="/users/new">or, sign up</a></p>
+    </form>
+  </section>
+</body>
+</html>
