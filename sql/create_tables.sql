@@ -1,4 +1,5 @@
 DROP TABLE IF EXISTS tblmoviesrating;
+<<<<<<< HEAD
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS comments;
 
@@ -11,6 +12,8 @@ CREATE TABLE IF NOT EXISTS users (
   password VARCHAR(100) NOT NULL
 );
 
+=======
+>>>>>>> e87ffcf6d7dc6fe91a7a0ef0ab65b151bfa71f45
 CREATE TABLE IF NOT EXISTS tblmoviesrating(
 id SERIAL PRIMARY KEY,
   rating NUMERIC(5,2) NOT NULL,

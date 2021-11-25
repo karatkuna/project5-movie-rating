@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('../partials/head') %>
+<<<<<<< HEAD
 <body>
   <%- include('../partials/header') %>
     <main>
@@ -11,3 +12,102 @@
     <script src="/js/allMovies.js"></script>
 </body>
 </html>
+=======
+<body class="w3-light-grey">
+  <%- include('../partials/nav') %>
+  <%- include('../partials/header') %>
+
+  <main>
+    <section class="banner" id="home">
+      <div class="banner-txt">
+        <h1 class="w3-text-white banner-h1">Rate what you’ve watched with a <br>thumb up or thumb down</h1>
+        <span class="btn-group">
+          <a href="/search"><button class="btn btn-search-movie" type="button">SEARCH MOVIE</button></a>
+          <button class="btn btn-login" type="button">LOG IN</button>
+        </span>
+      </div>
+      <img class="w3-image" src="/assets/istockphoto-1180700862-612x612.jpg" alt="cinema" width="1000" height="1060">
+    </section>
+
+    <section class="container main-container">
+      <!-- POPULAR Movies -->
+      <div class="row">
+        <div class="col-md-12 text-left">
+          <h1 class="carousel-title text-left">Popular Movies</h1>
+        </div>
+        
+        <div id="carouselExample" class="carousel slide d-none d-sm-none d-md-block" data-ride="carousel">
+          <div id="popular" class="carousel-inner">
+          </div>
+
+          <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+
+          <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+
+       <!-- TOP RATED Movies -->
+       <div class="row">
+        <div class="col-md-12 text-left">
+          <h1 class="carousel-title text-left">Top Rated Movies</h1>
+        </div>
+        
+        <div id="carouselExample1" class="carousel slide d-none d-sm-none d-md-block" data-ride="carousel">
+          <div id="topRated" class="carousel-inner">
+          </div>
+
+          <a class="carousel-control-prev" href="#carouselExample1" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+
+          <a class="carousel-control-next" href="#carouselExample1" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+
+       <!-- UPCOMING Movies -->
+       <div class="row">
+        <div class="col-md-12 text-left">
+          <h1 class="carousel-title text-left">Upcoming Movies</h1>
+        </div>
+        
+        <div id="carouselExample2" class="carousel slide d-none d-sm-none d-md-block" data-ride="carousel">
+          <div id="upcoming" class="carousel-inner">
+          </div>
+
+          <a class="carousel-control-prev" href="#carouselExample2" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+
+          <a class="carousel-control-next" href="#carouselExample2" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    
+  </main>
+  <%- include('../partials/footer') %>
+  
+
+
+  <!-- Bootstrap JQuery Plugin -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+  <!-- Additional Javascript -->
+  <!-- <script src="https://www.jqueryscript.net/demo/bootstrap-carousel-templates/logo-carousel/js/main.js"></script> -->
+  <script src="/js/allMovies.js"></script>
+</body>
+</html>
+>>>>>>> e87ffcf6d7dc6fe91a7a0ef0ab65b151bfa71f45

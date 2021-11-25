@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %>
+<body class="w3-light-grey">
+  <%- include('../partials/nav') %>
+  <%- include('../partials/header') %>
+
+  <main class="position-relative">
+    <section class="search-option">
+      <form id="myForm" method="GET" action="/search">
+        <h3 class="search-title">SEARCH</h3>
+        <input type="text" id="keyword" class="keyword" name="keyword"><button class="btn-search" type="button"><i class="fa fa-search"></i></button>
+
+        <h3 class="search-title">SORT BY</h3>
+        <ul>
+          <li><input type="radio" id="popular" class="sortby" name="sortby" value="popular">Popular</li>
+          <li><input type="radio" id="topRated" class="sortby" name="sortby" value="topRated">Top-rated</li>
+          <li><input type="radio" id="upcoming" class="sortby" name="sortby" value="upcoming">Upcoming</li>
+        </ul>
+
+        <h3 class="search-title">GENRE</h3>
+        <ul id="genreList">
+        </ul>
+      </form>
+    </section>
+    <section class="search-content">
+      <div class="search-result main-container w3-light-grey">
+
+      </div>
+    </section>
+    <section class="pagination">
+
+    </section>
+  </main>
+  <%- include('../partials/footer') %>
+  
+
+
+  <!-- Bootstrap JQuery Plugin -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+  <!-- Additional Javascript -->
+  <script src="/js/searchMovies.js" defer></script>
+</body>
+</html>
+
+
