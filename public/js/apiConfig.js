@@ -6,3 +6,8 @@ const apiOptions = {
   include_adult: false
   // sort_by
 }
+
+const display = {
+  'popular': '/movie/popular',
+  'topRated': '/movie/top_rated',
+  'upcoming': '/movie/upcoming'}

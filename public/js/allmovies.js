@@ -1,8 +1,3 @@
-const display = {
-  'popular': '/movie/popular',
-  'topRated': '/movie/top_rated',
-  'upcoming': '/movie/upcoming'}
-
 for(const k in display ) {  
   $.getJSON(API_BASE_URL + display[k], apiOptions)
   .then((data) => {
