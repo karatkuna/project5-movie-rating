@@ -28,7 +28,6 @@ app.use(morgan("dev"));
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 
-
 // session config
 app.use(
   session({
@@ -40,14 +39,14 @@ app.use(
     resave: false,
     secret: process.env.SESSION_SECRET,
   })
-)
+);
 
 // Cofigure axios to only request the movie db
 axios.defaults.baseURL = "https://api.themoviedb.org/3";
 // Routes
-// app.use("/movies", moviesRouter);
-// app.use("/api/all-movies", moviesApiRouter);
-// app.use("/api/single-movie", singleMovieApiRouter);
+app.use("/movies", moviesRouter);
+app.use("/api/all-movies", moviesApiRouter);
+app.use("/api/single-movie", singleMovieApiRouter);
 app.use("/", homeRouter);
 app.use("/search", searchRoute);
 

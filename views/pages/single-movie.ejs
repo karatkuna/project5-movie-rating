@@ -4,7 +4,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
+ 
   <%- include('../partials/scriptsAttach') %>
+ 
   <body>
     <!-- header -->
     <header><%- include('../partials/header') %></header>
@@ -14,12 +16,19 @@
           <img class="card-img-top" id="poster" alt="Card image cap"></img>
               <div class="card-body text-dark">
               <h5  id="title" class="card-title"></h5>
+              <h4 class="card-info" id="rating"><i class="fa fa-star checked"></i></h4>
               <p class="card-text" id="genres"></p>
               <p class="card-text" id="summary"></p>
              </div>
             
           </div>
-         
+         <div>
+          <form id="rating-form" method="POST" action="/movies/<%= movie_id %>">
+            <label for="userrating">Rate movie here:</label>
+            <input id="userrating" type="number" name="userrating"  />
+            <button type="submit">Rate</button>
+          </form>
+         </div>
 
       <!-- <h1 id="title"></h1>
       <img id="poster" src="" alt="" />
@@ -29,15 +38,15 @@
       </div> -->
       <div>
         <h2>Comments</h2>
-        <%# if (typeof user !== 'undefined' && user.userId) { %>
+        <!-- <%# if (typeof user !== 'undefined' && user.userId) { %> -->
         <form id="comment-form" method="POST" action="/movies/<%= movie_id %>">
           <label for="comment">Write comment here:</label>
           <input id="comment" type="text" name="comment" />
           <button type="submit">Send</button>
         </form>
-        <%# } else { %>
+        <!-- <%# } else { %> 
           <p>Please <a href="/login">login</a> to post a comment.</p>
-        <%# } %>
+        <!-- <%# } %> -->
         <div id="comments">
           <%# const commentLimit = comments.length > 10 ? 10 : comments.length
           %> <% for (let i = 0; i < comments.length; i++) { %>
