@@ -8,9 +8,5 @@ router.get('/', (req, res) => {
 })
 
 
-<<<<<<< HEAD
-module.exports = router
-=======
 module.exports = router
 
->>>>>>> e87ffcf6d7dc6fe91a7a0ef0ab65b151bfa71f45
