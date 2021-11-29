@@ -3,6 +3,7 @@ const db = require("../database");
 const router = express.Router();
 
 console.log("in movies.js");
+
 router.get("/:id", (req, res) => {
   console.log("in get");
   db.any(
