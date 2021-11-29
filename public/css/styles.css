@@ -1,12 +1,12 @@
 * {
   box-sizing: border-box;
-  font-family: 'Urbanist', sans-serif;
+  font-family: "Urbanist", sans-serif;
 }
 
 body {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   margin: 0 auto;
-  background-color: #030615;
+  /* background-color: #030615; */
 }
 
 footer p {
@@ -19,19 +19,29 @@ a:hover {
   text-decoration: unset;
 }
 
-h1,h2,h3,h4,h5,h6 {font-family: "Oswald"; }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Oswald";
+}
 
 ul {
   list-style-type: none;
   padding-left: 20px;
 }
 
-input[type='radio'],
-input[type='checkbox'] {
+input[type="radio"],
+input[type="checkbox"] {
   margin-right: 7px;
 }
 
-.text-left { text-align: left; padding-left: 0; }
+.text-left {
+  text-align: left;
+  padding-left: 0;
+}
 
 .banner {
   position: relative;
@@ -50,9 +60,13 @@ input[type='checkbox'] {
   padding-left: 40px;
 }
 
-.banner-h1 { font-size: 3vw; }
+.banner-h1 {
+  font-size: 3vw;
+}
 
-.banner img { width: 60%; }
+.banner img {
+  width: 60%;
+}
 
 .btn {
   margin-top: 2vw;
@@ -67,16 +81,24 @@ input[type='checkbox'] {
 
 .btn-login,
 .btn-search-movie {
-  background-color: #FFF;
+  background-color: #fff;
   border: rgb(10, 8, 8);
   font-size: 1rem;
 }
 
-.border1 { border: 1px solid salmon; }
-.border2 { border: 1px solid seagreen; }
-.border3 { border: 1px solid sienna; }
+.border1 {
+  border: 1px solid salmon;
+}
+.border2 {
+  border: 1px solid seagreen;
+}
+.border3 {
+  border: 1px solid sienna;
+}
 
-.carousel-title { margin-top: 60px; }
+.carousel-title {
+  margin-top: 60px;
+}
 
 .carousel-control-next,
 .carousel-control-prev {
@@ -106,7 +128,7 @@ input[type='checkbox'] {
   padding-top: 5px;
   padding-left: 10px;
   padding-right: 10px;
-  background-color: #FFF;
+  background-color: #fff;
   height: 92px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -125,7 +147,9 @@ input[type='checkbox'] {
   color: gold;
 }
 
-.position-relative { position: relative; }
+.position-relative {
+  position: relative;
+}
 
 .main-container {
   padding-bottom: 80px;
@@ -143,7 +167,7 @@ input[type='checkbox'] {
   width: 250px;
 }
 
-.search-title { 
+.search-title {
   margin-top: 20px;
   margin-left: 20px;
 }
