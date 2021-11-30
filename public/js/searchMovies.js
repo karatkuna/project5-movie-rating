@@ -1,19 +1,17 @@
 let selectedSort = sessionStorage.getItem("sortby") || "popular"
-const keywordInput = sessionStorage.getItem("keyword") || $("#keyword").value || ""
-const selectedGenre = sessionStorage.getItem("genre")
+let keywordInput = sessionStorage.getItem("keyword") || $("#keyword").value || ""
+const selectedGenre = sessionStorage.getItem("genre") || null
 
 $("#keyword").val(keywordInput)
 
 const p1 = $.getJSON(API_BASE_URL + '/genre/movie/list', apiOptions)
 const p2 = $.getJSON(API_BASE_URL + display[selectedSort], apiOptions)
 
-
 /** Create genre list **/
 
 Promise.all([p1, p2]).then(results => {
   const genres = results[0].genres
   const movies = results[1].results
-  console.log(movies)
 
   let checked = ""
 
@@ -21,7 +19,7 @@ Promise.all([p1, p2]).then(results => {
     checked = ""
     const li = $("<li>")
 
-    if(selectedGenre == genres[i].id) checked = "checked"
+    if(selectedGenre != null && selectedGenre.includes(genres[i].id)) checked = "checked"
     
     $(li).append(`<input type="checkbox" name="genre" class="genre" value="${genres[i].id}" ${checked}> ${genres[i].name}(${genres[i].id})`)
     
@@ -33,44 +31,73 @@ Promise.all([p1, p2]).then(results => {
   }
 
   const row = $("<div>").attr("class", "row")
+  let count = 0;
 
   for(let i = 0; i < movies.length; i++) {
     let movie = movies[i]
-
-    if(typeof selectselectedGenre != 'undefined' && selectselectedGenre.length > 0) {
-      for(let j = 0; j < selectselectedGenre.length; j++) {
-        if(selectedGenre[i] == )
-      }
+    let matchGenre = false
+    let matchKeyword = false
+    let mvGenre = ""
+    for(let j = 0; j < movie.genre_ids.length; j++) {
+      if(j > 0) mvGenre += ","
+      mvGenre += movie.genre_ids[j]
     }
 
-    if((keywordInput != "" && movie.title.toLowerCase().includes(keywordInput.toLowerCase())) || ) {
-      console.log(keywordInput + "=" + movie.title.toLowerCase())
+    if(selectedGenre != null && selectedGenre.length > 0) {
+      for(let j = 0; j < movie.genre_ids.length; j++) {
+        if(selectedGenre.includes(movie.genre_ids[j])) {
+          matchGenre = true
+          break
+        }
+      }
+    }
+    
+    keywordInput = keywordInput.toLowerCase()
+    let movieTitle = movie.title.toLowerCase()
+    if((keywordInput != "" && movieTitle.includes(keywordInput)) ) {
+      matchKeyword = true
+    }
+
+    if(matchKeyword || matchGenre) {
       const html = `<div class="card col-md-2">
-              <img class="d-block w-100" src="${IMAGE_BASE_URL + movie.poster_path}" alt="${movie.title}">
+      <a href="/movies/${movie.id}"><img class="d-block w-100" src="${IMAGE_BASE_URL + movie.poster_path}" alt="${movie.title}"></a>
               <span>
               <h4 class="card-info"><i class="fa fa-star checked"></i>${movie.vote_average}</h4>
-              <p class="card-info card-title"><b>${className}</b></p>
+              <p class="card-info card-title"><b>${movie.title}</b></p>
               </span>
             </div>`
 
       $(row).append(html)
+      count++
     }
-    
-    if(keywordInput == "") {
-      const html = `<div class="${className}">
-              <img class="d-block w-100" src="${IMAGE_BASE_URL + movie.poster_path}" alt="${movie.title}">
-              <span>
-              <h4 class="card-info"><i class="fa fa-star checked"></i>${movie.vote_average}</h4>
-              <p class="card-info card-title"><b>${className}</b></p>
-              </span>
-            </div>`
+  }
+  
+  if(count == 0 && selectedGenre == null && keywordInput.trim() == ""){
+    for(let i = 0; i < movies.length; i++) {
+      let movie = movies[i]
+      let mvGenre = ""
+      for(let j = 0; j < movie.genre_ids.length; j++) {
+        if(j > 0) mvGenre += ","
+        mvGenre += movie.genre_ids[j]
+      }
+
+      const html = `<div class="card col-md-2">
+      <a href="/movies/${movie.id}"><img class="d-block w-100" src="${IMAGE_BASE_URL + movie.poster_path}" alt="${movie.title}"></a>
+        <span>
+        <h4 class="card-info"><i class="fa fa-star checked"></i>${movie.vote_average}</h4>
+        <p class="card-info card-title"><b>${movie.title}</b></p>
+        </span>
+      </div>`
 
       $(row).append(html)
     }
   }
 
   $(".search-result").append(row)
-  loadMovies()
+
+  sessionStorage.removeItem("genre")
+  sessionStorage.removeItem("sortby")
+  sessionStorage.removeItem("keyword")
 })
 
 .catch((error) => {
@@ -86,46 +113,21 @@ function handleClick(event) {
 
   const element = event.target;
 
-  if(element.type == 'checkbox') {
-    loadMovies();
-  }
-}
-
-function loadMovies() {
-  let count = 0
-  let className = ""
-  // for(let i = 0; i < $(".genre").length; i++ ) {
-    
-  //   className = $(".genre")[i].value
-
-  //   if($(".genre")[i].checked == true) {
-  //     $(`.g${className}`).css("display", "flex");
-  //     count++
-  //   }else{
-  //     $(`.g${className}`).css("display", "none");
-  //   }
-  // }
-
-  if(count === 0) {
-    for(let i = 0; i < $(".genre").length; i++ ) {
-      className = ".g" + $(".genre")[i].value
-      $(className).css("display", "flex");
-    }
+  if(element.type == 'checkbox' || element.type == 'radio') {
+    reload();
   }
 }
 
 function reload() {
-  sessionStorage.removeItem("genre")
-  sessionStorage.removeItem("sortby")
-  sessionStorage.removeItem("keyword")
-
   const keyword =$("#keyword")[0].value.trim()
 
   if(keyword != "") sessionStorage.setItem("keyword", keyword)
 
   let genre = []
   for(let i = 0; i < $('.genre').length; i++) {
-    if($('.genre')[i].checked) genre.push($('.genre')[i].value)
+    if($('.genre')[i].checked) {
+      genre.push($('.genre')[i].value)
+    }
   }
 
   sessionStorage.setItem("genre", genre)

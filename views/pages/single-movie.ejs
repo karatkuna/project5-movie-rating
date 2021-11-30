@@ -14,8 +14,9 @@
         <div class="movie-desc">
           <h1 id="title"></h1>
           <h4 id="releaseYear"></h4>
-          <p id="genres">Genres: Drama, Family, Fantasy</p>
-          <p id="overview">Shang-Chi must confront the past he thought he left behind when he is drawn into the web of the mysterious Ten Rings organization.</p>
+          <p id="genres"></p>
+          <p id="userComment000"></p>
+          <p id="readMore000" onclick="readMore('000')">...READ MORE...</p>
         </div>
       </div>
     </section>
@@ -33,23 +34,29 @@
     <section id="addMovieReview" class="movie-review max-w-1050">
       <div class="review-title">
         <h1>REVIEWS</h1>
-        <a class="btn-add-review" href="">ADD REVIEW</a>
+        <% if(typeof firstname == undefined || firstname == "") { %>
+          <a class="btn-add-review" href="/login">LOG IN TO COMMENT MOVIE</a>
+        <% }else{ %>
+          <button class="btn-add-review" type="button" onclick="showCommentBox('.add-review-box')">ADD REVIEW</button>
+        <% } %>
       </div>
-      <div class="add-review-box max-w-1050">
-        <form id="comment-form" method="POST" action="/movies/<%= movie_id %>">
-          <div>
-            <label for="rating">Rating</label> 
-            <input id="userrating" type="number" name="userrating" step=".1" min="0" max="10" required>
-          </div>
-    
-          <div>
-            <label for="comment">Comment</label> 
-            <textarea name="comment" id="comment" required></textarea>
-          </div>
+      <% if(typeof firstname != 'undefined' && firstname != "") { %>
+        <div class="add-review-box max-w-1050">
+          <form id="comment-form" method="POST" action="/movies/<%= movie_id %>">
+            <div>
+              <label for="rating">Rating</label> 
+              <input id="userrating" type="number" name="userrating" step=".1" min="0" max="10" required>
+            </div>
+      
+            <div>
+              <label for="comment">Comment</label> 
+              <textarea name="comment" id="comment" required></textarea>
+            </div>
 
-          <button class="btn-submit" type="submit">SEND</button>
-        </form>
-      </div>
+            <button class="btn-submit" type="submit">SEND</button>
+          </form>
+        </div>
+      <% } %>
     </section>
 
     <section id="movieReview" class="movie-review max-w-1050">
@@ -61,7 +68,7 @@
               <p class="user-name"><%= rating[i].firstname %></p>
               <p class="text-center"><%= rating[i].created_at %></p>
             </div>
-            <div>
+            <div class="user-review">
               <p id="userCommentb<%= rating[i].id %>" class="user-review"><%= rating[i].comment %></p>
               <p id="readMoreb<%= rating[i].id %>" class="read-more"></p>
             </div>

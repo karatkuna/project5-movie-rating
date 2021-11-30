@@ -80,7 +80,7 @@ router.post('/', redirectToHome, (req, res) => {
   if (!email || !password) req.flash("error", "Please enter both email and password")
   if(!isValid(cleanedEmail, emailRegex)) req.flash("error", "Email is not valid")
 
-  if (req.session.flash.error && req.session.flash.error.length > 0) return res.redirect("/login")
+  if (typeof req.session.flash.error != 'undefined' && req.session.flash.error.length > 0) return res.redirect("/login")
 
   
   // 2. does user exist?

@@ -47,7 +47,7 @@ input[type="checkbox"] {
 
 .banner {
   position: relative;
-  background-color: rgb(10, 8, 8);
+  background-color: #000000;
   text-align: right;
 }
 
@@ -295,6 +295,7 @@ input[type="checkbox"] {
 }
 
 .movie-review {
+  margin-top: 50px;
   padding: 0 10px;
 }
 
@@ -315,7 +316,10 @@ input[type="checkbox"] {
   font-family: "Oswald";
   font-size: 1.5rem;
   border-radius: 10px;
+  border: inherit;
 }
+
+button:hover { cursor: pointer; }
 
 .user-review-card {
   margin-bottom: 20px;
@@ -326,7 +330,13 @@ input[type="checkbox"] {
   background-color: #FFF;
   border-radius: 10px;
   display: flex;
+  flex-wrap: nowrap;
 }
+
+.user-review-info,
+.user-rating { flex: 15%; }
+
+.user-review { flex: 70%; min-width: 200px; }
 
 .user-review-info {
   padding: 10px 10px;
@@ -351,7 +361,6 @@ input[type="checkbox"] {
 }
 
 .user-name { 
-  width: 95px;
   margin-top: 20px;
   margin-bottom: 5px;
   text-align: center;
@@ -369,6 +378,10 @@ input[type="checkbox"] {
   max-height: 4.8rem; 
 }
 
+#userComment000 {
+  line-height: 1.6rem;
+}
+
 .read-more {
   color: slategrey;
   cursor: pointer;
@@ -382,11 +395,11 @@ input[type="checkbox"] {
 .text-center { text-align: center; }
 
 .add-review-box {
-  margin-bottom: 40px;
   padding: 30px 25px;
   background-color: rgb(255, 251, 214);
   border-radius: 10px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(56, 56, 56, 0.1);
+  display: none;
 }
 
 .add-review-box * { vertical-align: top; }

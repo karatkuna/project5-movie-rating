@@ -10,6 +10,7 @@ Promise.all([p1, p2]).then(results => {
 
   $("#title").text(movie.title);
   $("#backdrop").attr("src", IMAGE_BASE_URL + movie.backdrop_path)
+  $("#backdrop").attr("alt", movie.title)
 
   const releaseDate = movie.release_date.split("-")
   const releaseYear = releaseDate[0]
@@ -22,8 +23,15 @@ Promise.all([p1, p2]).then(results => {
     genres += movie.genres[i].name
   }
 
+  if(movie.overview.length > 150){
+    $("#readMore000").css("display", "block")
+    $("#userComment000").addClass("user-comment")
+  }else{
+    $("#readMore000").css("display", "none")
+  }
+  
   $("#genres").text(genres);
-  $("#overview").text(movie.overview)
+  $("#userComment000").text(movie.overview)
   $("#voteAvg").text(movie.vote_average)
   $("#voteCount").text(movie.vote_count)
 
@@ -42,15 +50,10 @@ Promise.all([p1, p2]).then(results => {
     }
 
     let classComment = ""
-    let addSpace = ""
     let readMore = ""
     if(review[i].content.length > 200) {
       classComment = "class='user-comment'"
       readMore = `<p id='readMore${i}' class='read-more' onclick='readMore(${i})'>...READ MORE...</p>`
-    }else{
-      for(let j = 0; j < 200-review[i].content.length; j++) {
-        addSpace += "-"
-      }
     }
 
     let rating = null
@@ -66,8 +69,8 @@ Promise.all([p1, p2]).then(results => {
       <p class="user-name">${review[i].author.substr(0, 8)}</p>
       <p class="text-center">${createAt[0]}</p>
     </div>
-    <div>
-      <p id="userComment${i}" ${classComment}>${review[i].content + addSpace}</p>
+    <div class="user-review">
+      <p id="userComment${i}" ${classComment}>${review[i].content}</p>
       ${readMore}
     </div>
     <div class="user-rating">
@@ -115,16 +118,13 @@ $("#comment-form").submit((e) => {
     })
 
     .then((response) => {
-      const firstname = "KK"
+      const firstname = response.firstname
 
-      let comment, readMore, addSpace = ""
+      let classComment = "" 
+      let readMore = ""
       if(response.comment.length > 200) {
         classComment = "class='user-comment'"
         readMore = `<p id='readMoreb${response.id}' class='read-more' onclick='readMore(b${response.id})'>...READ MORE...</p>`
-      }else{
-        for(let j = 0; j < 200-response.comment.length; j++) {
-          addSpace += "-"
-        }
       }
 
       const html = `<div class="user-review-card">
@@ -133,8 +133,8 @@ $("#comment-form").submit((e) => {
           <p class="user-name">${firstname.substr(0, 8)}</p>
           <p class="text-center">${response.created_at}</p>
         </div>
-        <div>
-          <p id="userCommentb${response.id}" ${classComment}>${response.comment + addSpace}</p>
+        <div class="user-review">
+          <p id="userCommentb${response.id}" ${classComment}>${response.comment}</p>
           ${readMore}
         </div>
         <div class="user-rating">
@@ -155,3 +155,10 @@ $("#comment-form").submit((e) => {
     });
   }
 });
+
+function showCommentBox(box) {
+  if($(box).css('display', 'none'))
+    $(box).css('display', 'block')
+  else
+    $(box).css('display', 'none')
+}
