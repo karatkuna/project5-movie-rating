@@ -24,7 +24,8 @@ const cleanEmail = (email) => {
 router.get('/new', (req, res) => {
 
   res.render('pages/register', {
-   errors: req.flash("error")
+   errors: req.flash("error"),
+   pageTitle: 'Registration',
   })
 })
 

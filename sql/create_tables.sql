@@ -14,14 +14,12 @@ CREATE TABLE IF NOT EXISTS users (
 CREATE TABLE IF NOT EXISTS tblmoviesrating(
   id SERIAL PRIMARY KEY,
   rating NUMERIC(5,2) NOT NULL,
+  user_id INT NOT NULL,
   movie_id INT NOT NULL,
-  created_at TIMESTAMPTZ DEFAULT NOW()
-);
-
-
-CREATE TABLE IF NOT EXISTS comments (
-  id SERIAL PRIMARY KEY,
   comment TEXT NOT NULL,
-  movie_id INT NOT NULL,
-  created_at TIMESTAMPTZ DEFAULT NOW()
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  CONSTRAINT fk_users
+    FOREIGN KEY(user_id)
+    REFERENCES users(id)
+    ON DELETE CASCADE 
 );

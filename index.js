@@ -11,7 +11,7 @@ const axios = require("axios");
 const homeRouter = require("./routes/home");
 const moviesRouter = require("./routes/movies");
 const loginRouter = require("./routes/login")
-//const logoutRouter = require('./routes/logout')
+const logoutRouter = require('./routes/logout')
 const usersRouter = require("./routes/users")
 const errorRouter = require("./routes/error")
 const searchRoute = require("./routes/search");
@@ -54,13 +54,14 @@ axios.defaults.baseURL = "https://api.themoviedb.org/3";
 // Routes
 app.use("/", homeRouter);
 app.use("/movies", moviesRouter);
+app.use("/search", searchRoute);
+app.use('/users', usersRouter)
+app.use('/login', loginRouter)
+app.use('/logout', logoutRouter)
+
 app.use("/api/all-movies", moviesApiRouter);
 app.use("/api/single-movie", singleMovieApiRouter);
-app.use("/search", searchRoute);
-app.use('/login', loginRouter)
-//app.use('/logout', logoutRouter)
 
-app.use('/users', usersRouter)
 app.use('*', errorRouter)
 
 app.listen(PORT, () => console.log(`Listening at http://localhost:${PORT}`));

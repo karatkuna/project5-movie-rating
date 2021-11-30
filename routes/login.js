@@ -66,7 +66,8 @@ router.post('/register', (req, res) => {
 router.get('/', redirectToHome, (req, res) => {
   res.clearCookie('moviedb_sid')
   res.render('pages/login', {
-    errors: req.flash("error")
+    errors: req.flash("error"),
+    pageTitle: 'Login',
   })
 })
 
