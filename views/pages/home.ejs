@@ -10,11 +10,13 @@
       <div class="banner-txt">
         <h1 class="w3-text-white banner-h1">Rate what you’ve watched with a <br>thumb up or thumb down</h1>
         <span class="btn-group">
-          <a href="/search"><button class="btn btn-search-movie" type="button">SEARCH MOVIE</button></a>
-          <button class="btn btn-login" type="button">LOG IN</button>
+          <a class="btn btn-search-movie" href="/search">SEARCH MOVIE</a>
+          <% if(firstname == "" || typeof firstname == undefined) { %>
+          <a class="btn btn-login" href="/login">LOG IN</a>
+          <% } %>
         </span>
       </div>
-      <img class="w3-image" src="/assets/istockphoto-1180700862-612x612.jpg" alt="cinema" width="1000" height="1060">
+      <img class="w3-image" src="/assets/enjoy_movie.jpg" alt="cinema" width="1000" height="1060">
     </section>
 
     <section class="container main-container">
@@ -72,12 +74,12 @@
           <div id="upcoming" class="carousel-inner">
           </div>
 
-          <a class="carousel-control-prev" href="#carouselExample2" role="button" data-slide="prev">
+          <a class="carousel-control-prev" href="#" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
           </a>
 
-          <a class="carousel-control-next" href="#carouselExample2" role="button" data-slide="next">
+          <a class="carousel-control-next" href="#" role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
           </a>

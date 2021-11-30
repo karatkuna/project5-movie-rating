@@ -9,6 +9,8 @@ body {
   /* background-color: #030615; */
 }
 
+footer { margin-top: 40px; }
+
 footer p {
   margin: 30px auto;
   text-align: center;
@@ -45,7 +47,7 @@ input[type="checkbox"] {
 
 .banner {
   position: relative;
-  background-color: rgb(10, 8, 8);
+  background-color: #000000;
   text-align: right;
 }
 
@@ -86,6 +88,17 @@ input[type="checkbox"] {
   font-size: 1rem;
 }
 
+.btn-login {
+  padding: 1vw 4.2vw
+}
+
+.banner a:link,
+.banner a:visited,
+.banner a:hover,
+.banner a:active {
+  color: black;
+}
+
 .border1 {
   border: 1px solid salmon;
 }
@@ -108,6 +121,7 @@ input[type="checkbox"] {
 }
 
 .card {
+  margin-bottom: 20px;
   padding-left: 0;
   border: inherit;
   background-color: inherit;
@@ -129,7 +143,7 @@ input[type="checkbox"] {
   padding-left: 10px;
   padding-right: 10px;
   background-color: #fff;
-  height: 92px;
+  height: 112px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
@@ -179,13 +193,13 @@ input[type="checkbox"] {
 }
 
 .search-result {
-  min-height: 830px;
+  min-height: 900px;
   padding-top: 20px;
 }
 
 .row {
   margin-top: 20px;
-  margin-left: 85px;
+  margin-left: 65px;
 }
 
 .keyword {
@@ -209,4 +223,315 @@ input[type="checkbox"] {
 
 .btn-search:hover {
   opacity: 0.7;
+}
+
+.sm-title {
+  width: 100%;
+  /* background-color: lightgrey; */
+}
+
+.max-w-1050 {
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.bg-black {
+  background-color: black;
+}
+
+.movie-intro  {
+  padding: 50px 10px;
+  display: flex;
+}
+
+.movie-intro h1,
+.movie-intro h4,
+.movie-intro p {
+  color: #FFF;
+}
+
+.movie-intro h4 {
+  background-color: grey;
+  width: 50px;
+  text-align: center;
+}
+
+.movie-img {
+  border-radius: 10px;
+}
+
+.movie-desc {
+  padding-top: 0px;
+  padding-left: 30px;
+}
+
+#title { 
+  margin-top: 0px;
+  margin-bottom: 20px; 
+}
+
+#genres { 
+  margin-top:5px; 
+  margin-bottom:5px;
+  color: grey;
+  font-weight: bold; 
+}
+
+.movie-desc p {
+  font-size: 1.2rem;
+}
+
+.movie-vote {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.movie-vote div {
+  min-width: 250px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.movie-review {
+  margin-top: 50px;
+  padding: 0 10px;
+}
+
+.review-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.movie-review h1 {
+  margin-bottom: 40px;
+}
+
+.btn-add-review {
+  padding: 15px 45px;
+  color: rgb(39, 39, 39);
+  background-color: rgb(252, 196, 13);
+  font-family: "Oswald";
+  font-size: 1.5rem;
+  border-radius: 10px;
+  border: inherit;
+}
+
+button:hover { cursor: pointer; }
+
+.user-review-card {
+  margin-bottom: 20px;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: #FFF;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.user-review-info,
+.user-rating { flex: 15%; }
+
+.user-review { flex: 70%; min-width: 200px; }
+
+.user-review-info {
+  padding: 10px 10px;
+  margin: 0 auto;
+}
+
+.user-abbv {
+  width: 57px;
+  margin: 0 auto;
+  padding: 14px 0px;
+  background-color: lightgrey;
+  border-radius: 35px; 
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.user-avatar {
+  width: 55px;
+  height: 55px;
+  margin: 0px 20px;
+  border-radius: 25px;
+}
+
+.user-name { 
+  margin-top: 20px;
+  margin-bottom: 5px;
+  text-align: center;
+  font-family: "Oswald";
+  font-size: 1.3rem;
+}
+
+#userComment { line-height: 1.8em;}
+
+.user-comment {
+  display: block;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
+  max-height: 4.8rem; 
+}
+
+#userComment000 {
+  line-height: 1.6rem;
+}
+
+.read-more {
+  color: slategrey;
+  cursor: pointer;
+}
+
+.user-rating { 
+  padding: 0 25px; 
+  text-align:center; 
+}
+
+.text-center { text-align: center; }
+
+.add-review-box {
+  padding: 30px 25px;
+  background-color: rgb(255, 251, 214);
+  border-radius: 10px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(56, 56, 56, 0.1);
+  display: none;
+}
+
+.add-review-box * { vertical-align: top; }
+
+.add-review-box div { margin-bottom: 15px; }
+
+.add-review-box label {
+  width: 100px;
+  font-family: "OsWald";
+  font-size: 1.4rem;
+}
+
+.add-review-box input[type=number] {
+  height: 40px;
+}
+
+.add-review-box textarea {
+  width: 75%;
+  height: 70px;
+}
+
+.btn-submit {
+  margin-top: 30px;
+  padding: 10px 125px;
+
+  border: none;
+  border-radius: 10px;
+
+  color: white;
+  font-family: "OsWald";
+  letter-spacing: 1pt;
+  text-align: center;
+  text-decoration: none;
+
+  display: block;
+  cursor: pointer;
+  
+  background-color: rgb(190, 190, 190);
+}
+
+
+/* login & sign-up page */
+
+.body-login, .body-signup {
+  height: 100%;
+  position: relative;
+}
+
+.login-box, .signup-box {
+  padding: 40px 15px;
+  background-color: rgb(230, 230, 230);
+  text-align: center;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+  border-radius: 25px;
+}
+
+.login-box {
+  width: 400px;
+}
+
+.signup-box {
+  min-width: 500px;
+  max-width: 700px;
+  padding: 20px 50px;
+}
+
+.signup-box div {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login-box h1,
+.signup-box h1 { margin: 30px auto; }
+
+.login-box div {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fas { font-size: 1.2rem; }
+
+.login-input,
+.signup-box input {
+  width: 280px;
+  height: 30px;
+  margin-left: 20px;
+  border: 1px solid lightgray;
+}
+
+input[type=password] {
+  font-size: 5rem;
+}
+
+.login-box .btn-login,
+.signup-box .btn-login {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  padding: 10px 140px;
+  background-color: black;
+  color: white;
+  font-size: 1.1rem;
+  letter-spacing: 1pt;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.signup {
+  margin-bottom: 40px;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.signup:hover {
+  text-decoration: underline;
+}
+
+.error-box { margin-bottom: 30px; }
+
+.error {
+  padding-left: 20px;
+  background-color: rgb(235, 235, 235);
+  color: rgb(255, 71, 71);
+  text-align: left;
+  display: block;
 }
