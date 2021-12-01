@@ -295,7 +295,6 @@ input[type="checkbox"] {
 }
 
 .movie-review {
-  margin-top: 50px;
   padding: 0 10px;
 }
 
@@ -341,6 +340,7 @@ button:hover { cursor: pointer; }
 .user-review-info {
   padding: 10px 10px;
   margin: 0 auto;
+  text-align: center;
 }
 
 .user-abbv {
@@ -356,7 +356,7 @@ button:hover { cursor: pointer; }
 .user-avatar {
   width: 55px;
   height: 55px;
-  margin: 0px 20px;
+  margin: 0px auto;
   border-radius: 25px;
 }
 
@@ -395,6 +395,7 @@ button:hover { cursor: pointer; }
 .text-center { text-align: center; }
 
 .add-review-box {
+  margin-bottom: 25px;
   padding: 30px 25px;
   background-color: rgb(255, 251, 214);
   border-radius: 10px;
