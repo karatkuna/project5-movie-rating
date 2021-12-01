@@ -23,7 +23,7 @@ Promise.all([p1, p2]).then(results => {
     genres += movie.genres[i].name
   }
 
-  if(movie.overview.length > 150){
+  if(movie.overview.length > 230){
     $("#readMore000").css("display", "block")
     $("#userComment000").addClass("user-comment")
   }else{
