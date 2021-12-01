@@ -421,6 +421,21 @@ button:hover { cursor: pointer; }
   height: 70px;
 }
 
+#thumbup, #thumbdown {
+  display: none;
+}
+
+.user-rating h1 {
+  margin-bottom: 10px;
+}
+
+.add-review-box i { margin-left: 15px; }
+
+.fa-thumbs-o-up,
+.fa-thumbs-o-down {  
+  font-size:36px;
+}
+
 .btn-submit {
   margin-top: 30px;
   padding: 10px 125px;

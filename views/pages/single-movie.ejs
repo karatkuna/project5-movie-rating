@@ -43,9 +43,11 @@
       <% if(typeof firstname != 'undefined' && firstname != "") { %>
         <div class="add-review-box max-w-1050">
           <form id="comment-form" method="POST" action="/movies/<%= movie_id %>">
-            <div>
-              <label for="rating">Rating</label> 
+            <div style="display: flex;">
+              <label for="rating">Rating</label>
               <input id="userrating" type="number" name="userrating" step=".1" min="0" max="10" required>
+              <i id="thumbup" class="fa fa-thumbs-o-up"></i>
+              <i id="thumbdown" class="fa fa-thumbs-o-down"></i>
             </div>
       
             <div>
@@ -75,6 +77,11 @@
             <div class="user-rating">
               <h4>VOTE</h4>
               <h1><%= parseFloat(rating[i].rating).toFixed(1) %></h1>
+              <% if(parseFloat(rating[i].rating > 5)){ %>
+                <i class="fa fa-thumbs-o-up"></i>
+              <% }else{ %>
+                <i class="fa fa-thumbs-o-down"></i>
+              <% } %>
             </div>
           </div>
         <% } %>

@@ -57,10 +57,13 @@ Promise.all([p1, p2]).then(results => {
     }
 
     let rating = null
-    if(review[i].author_details.rating != null) 
+    let thumb = ""
+    if(review[i].author_details.rating != null) {
       rating = parseInt(review[i].author_details.rating).toFixed(1)
-    else
+      thumb = (rating > 5)? "up": "down"
+    }else{
       rating = "-"
+    }
     
 
     let html = `<div class="user-review-card">
@@ -76,6 +79,7 @@ Promise.all([p1, p2]).then(results => {
     <div class="user-rating">
       <h4>VOTE</h4>
       <h1>${rating}</h1>
+      <i class="fa fa-thumbs-o-${thumb}"></i>
     </div>
   </div>`
     $("#movieReview").append(html)
@@ -87,18 +91,6 @@ Promise.all([p1, p2]).then(results => {
   console.log(error);
   $("main").append("There was an error")
 })
-
-function readMore(id) {
-  if($("p#readMore"+id).text() == "...READ MORE...") {
-    $("p#readMore"+id).text("...SHOW LESS...")
-    $("p#userComment" +id).removeClass("user-comment")
-  }else{
-    $("p#readMore"+id).text("...READ MORE...")
-    $("p#userComment" +id).addClass("user-comment")
-  }
-
-  $("p#userComment" +id).focus()
-}
 
 $("#comment-form").submit((e) => {
   e.preventDefault();
@@ -140,6 +132,7 @@ $("#comment-form").submit((e) => {
         <div class="user-rating">
           <h4>VOTE</h4>
           <h1>${parseFloat(response.rating).toFixed(1)}</h1>
+          <i class="fa fa-thumbs-o-${(parseFloat(response.rating) > 5)? 'up': 'down'}"></i>
         </div>
       </div>`
 
@@ -156,9 +149,36 @@ $("#comment-form").submit((e) => {
   }
 });
 
+function readMore(id) {
+  if($("p#readMore"+id).text() == "...READ MORE...") {
+    $("p#readMore"+id).text("...SHOW LESS...")
+    $("p#userComment" +id).removeClass("user-comment")
+  }else{
+    $("p#readMore"+id).text("...READ MORE...")
+    $("p#userComment" +id).addClass("user-comment")
+  }
+
+  $("p#userComment" +id).focus()
+}
+
 function showCommentBox(box) {
   if($(box).css('display', 'none'))
     $(box).css('display', 'block')
   else
     $(box).css('display', 'none')
 }
+
+$('#userrating').on("change", function(){
+  const rating = Number($('#userrating').val())
+
+  if(rating > 0 && rating <= 5){
+    $('#thumbup').css('display', 'none')
+    $('#thumbdown').css('display', 'block')
+  }else if(rating > 5 && rating <= 10){
+    $('#thumbup').css('display', 'block')
+    $('#thumbdown').css('display', 'none')
+  }else{
+    $('#thumbup').css('display', 'none')
+    $('#thumbdown').css('display', 'none')
+  }
+}).trigger("change");
