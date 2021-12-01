@@ -77,7 +77,7 @@
             <div class="user-rating">
               <h4>VOTE</h4>
               <h1><%= parseFloat(rating[i].rating).toFixed(1) %></h1>
-              <% if(parseFloat(rating[i].rating > 5)){ %>
+              <% if(parseFloat(rating[i].rating) > 5){ %>
                 <i class="fa fa-thumbs-o-up"></i>
               <% }else{ %>
                 <i class="fa fa-thumbs-o-down"></i>
