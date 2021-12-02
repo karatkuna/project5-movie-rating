@@ -21,7 +21,7 @@ Promise.all([p1, p2]).then(results => {
 
     if(selectedGenre != null && selectedGenre.includes(genres[i].id)) checked = "checked"
     
-    $(li).append(`<input type="checkbox" name="genre" class="genre" value="${genres[i].id}" ${checked}> ${genres[i].name}(${genres[i].id})`)
+    $(li).append(`<input type="checkbox" name="genre" class="genre" value="${genres[i].id}" ${checked}> ${genres[i].name}`)
     
     $("#genreList").append(li)
   }
