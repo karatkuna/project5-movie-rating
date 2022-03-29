@@ -29,3 +29,18 @@ axios, bcryptjs, dotenv, ejs, express, express-flash, express-session, morgan, p
 3. Install packages: npm install
 4. Create config file: .env file, refer to .env.sample
 5. Run project: npm run dev
+
+## App Pictures
+![alt text](https://github.com/karatkuna/project5-movie-rating/blob/master/app-img/home.png?raw=true)
+
+![alt text](https://github.com/karatkuna/project5-movie-rating/blob/master/app-img/sign-up.PNG?raw=true)
+
+![alt text](https://github.com/karatkuna/project5-movie-rating/blob/master/app-img/login.PNG?raw=true)
+
+![alt text](https://github.com/karatkuna/project5-movie-rating/blob/master/app-img/search-movie.png?raw=true)
+
+![alt text](https://github.com/karatkuna/project5-movie-rating/blob/master/app-img/single-movie.png?raw=true)
+
+![alt text](https://github.com/karatkuna/project5-movie-rating/blob/master/app-img/rate-movie.png?raw=true)
+
+
