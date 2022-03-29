@@ -5,9 +5,7 @@
 
 body {
   font-family: "Open Sans";
-  margin: 0 auto;
-  /* background-color: #030615; */
-}
+  margin: 0 auto; }
 
 footer { margin-top: 40px; }
 
@@ -21,14 +19,7 @@ a:hover {
   text-decoration: unset;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Oswald";
-}
+h1, h2, h3, h4, h5, h6 { font-family: "Oswald"; }
 
 ul {
   list-style-type: none;
@@ -195,12 +186,10 @@ input[type="checkbox"] {
 .search-result {
   min-height: 900px;
   padding-top: 20px;
+  padding-left: 20px;
 }
 
-.row {
-  margin-top: 20px;
-  margin-left: 65px;
-}
+.row { margin: 20px auto; }
 
 .keyword {
   height: 40px;
@@ -221,14 +210,9 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
-.btn-search:hover {
-  opacity: 0.7;
-}
+.btn-search:hover { opacity: 0.7; }
 
-.sm-title {
-  width: 100%;
-  /* background-color: lightgrey; */
-}
+.sm-title { width: 100%; }
 
 .max-w-1050 {
   max-width: 1050px;
@@ -382,6 +366,12 @@ button:hover { cursor: pointer; }
   line-height: 1.6rem;
 }
 
+.comment-box {
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .read-more {
   color: slategrey;
   cursor: pointer;
@@ -439,6 +429,8 @@ button:hover { cursor: pointer; }
 
 .btn-submit {
   margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 10px 125px;
 
   border: none;

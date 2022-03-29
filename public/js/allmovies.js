@@ -23,9 +23,9 @@ for (const k in display) {
           movie.title = movie.title.substring(0, limit) + "...";
         }
 
-        const html = `<div class="card col-md-2">
+        const html = `<div class="card col-6 col-md-2 col-sm-4">
         <a href="/movies/${movie.id}">
-          <img class="d-block w-100" src="${
+          <img class="d-block w-100" style="" src="${
             IMAGE_BASE_URL + movie.poster_path
           }" alt="${movie.title}"/>
           </a>

@@ -7,8 +7,7 @@ router.get("/:id", (req, res) => {
   const userId = req.session.userId || "" ;
   const firstname = req.session.firstname || "" ;
 
-  console.log("firstname")
-  console.log(req.session.firstname)
+  console.log("firstname", req.session.firstname)
 
   db.any(`SELECT t.id, rating, comment, TO_CHAR(created_at, 'YYYY-MM-DD') created_at, firstname FROM tblmoviesrating t JOIN users u ON u.id=t.user_id WHERE t.movie_id=$1 ORDER BY t.id DESC`, [movie_id])
   .then((rating) => {

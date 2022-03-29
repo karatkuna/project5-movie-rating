@@ -43,19 +43,21 @@
       <% if(typeof firstname != 'undefined' && firstname != "") { %>
         <div class="add-review-box max-w-1050">
           <form id="comment-form" method="POST" action="/movies/<%= movie_id %>">
-            <div style="display: flex;">
-              <label for="rating">Rating</label>
-              <input id="userrating" type="number" name="userrating" step=".1" min="0" max="10" required>
-              <i id="thumbup" class="fa fa-thumbs-o-up"></i>
-              <i id="thumbdown" class="fa fa-thumbs-o-down"></i>
-            </div>
-      
-            <div>
-              <label for="comment">Comment</label> 
-              <textarea name="comment" id="comment" required></textarea>
-            </div>
+            <div class="comment-box">
+              <div style="display: flex;">
+                <label for="rating">Rating</label>
+                <input id="userrating" type="number" name="userrating" step=".1" min="0" max="10" required>
+                <i id="thumbup" class="fa fa-thumbs-o-up"></i>
+                <i id="thumbdown" class="fa fa-thumbs-o-down"></i>
+              </div>
+        
+              <div>
+                <label for="comment">Comment</label> 
+                <textarea name="comment" id="comment" required></textarea>
+              </div>
 
-            <button class="btn-submit" type="submit">SEND</button>
+              <button class="btn-submit" type="submit">SEND</button>
+            </div>
           </form>
         </div>
       <% } %>
