@@ -3,7 +3,6 @@
 - Give rating and review to the movie that has been watched
 - Manipulate API
 - Practice using W3CSS
-- 
 
 ### Features:
 - Create user account
